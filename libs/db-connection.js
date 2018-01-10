@@ -5,5 +5,5 @@ mongoose.Promise = global.Promise;
 mongoose.connect(MONGO_URL, {useMongoClient: true});
 
 mongoose.connection
-  .once('once', () => console.log('Connected to the database!'))
+  .once('open', () => console.log('Connected to the database!'))
   .on('error', err => console.error(err));
